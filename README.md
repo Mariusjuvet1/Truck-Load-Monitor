@@ -16,6 +16,11 @@ This project is an Arduino-based truck load monitoring system that reads data fr
 - [Hardware Components](#hardware-components)
 - [Software Requirements](#software-requirements)
 - [Hardware Setup](#hardware-setup)
+- - [Hardware Setup](#hardware-setup)
+  - [Load Cell Wiring](#load-cell-wiring)
+  - [HX711 to Arduino Wiring](#hx711-to-arduino-wiring)
+  - [Touchscreen to Arduino Wiring](#touchscreen-to-arduino-wiring)
+  - [Combined Pin Assignment for Arduino](#combined-pin-assignment-for-arduino)
 - [Software Setup](#software-setup)
 - [Uploading the Code](#uploading-the-code)
 - [Using the System](#using-the-system)
@@ -69,6 +74,50 @@ You will need the following hardware components:
    - Ensure the power supply meets the voltage and current requirements of your setup.
 
 **Note:** Prices and availability may vary based on your location. The provided links are for convenience and reference.
+## Hardware Setup
+
+### Load Cell Wiring
+
+The load cell typically has five wires. Connect them as follows:
+
+| **Load Cell Wire** | **Description**         | **HX711 Pin** |
+|--------------------|-------------------------|---------------|
+| **Red**            | Positive Excitation (+E) | E+            |
+| **Black**          | Negative Excitation (-E) | E-            |
+| **Green**          | Positive Signal (+S)     | A+            |
+| **White**          | Negative Signal (-S)     | A-            |
+| **Yellow**         | Shield (optional)        | GND           |
+
+- **Red and Black Wires:** Power the Wheatstone bridge inside the load cell.
+- **Green and White Wires:** Carry the output signal proportional to the applied weight.
+- **Yellow Wire:** Shield wire to help reduce noise (optional connection to GND).
+
+### HX711 to Arduino Wiring
+
+The HX711 module acts as an amplifier and ADC for the load cell. Connect it to the Arduino as follows:
+
+| **HX711 Pin** | **Arduino Pin** | **Description**        |
+|---------------|-----------------|------------------------|
+| **VCC**       | 5V              | Power for the HX711    |
+| **GND**       | GND             | Ground connection      |
+| **DT**        | D6              | Data output from HX711 |
+| **SCK**       | D7              | Clock input for HX711  |
+
+### Touchscreen to Arduino Wiring
+
+The **Adafruit 2.8" TFT Touchscreen Shield** can be directly stacked on top of the Arduino Uno. Ensure the pins are properly aligned. The touchscreen uses predefined pins for communication, so there is no need for additional manual wiring.
+
+### Combined Pin Assignment for Arduino
+
+| **Component**  | **HX711 Pin** | **Arduino Pin** |
+|----------------|---------------|-----------------|
+| **HX711**      | VCC           | 5V              |
+|                | GND           | GND             |
+|                | DT            | D6              |
+|                | SCK           | D7              |
+| **Touchscreen**| (Predefined)  | (Predefined)    |
+
+---
 
 ## Software Requirements
 
