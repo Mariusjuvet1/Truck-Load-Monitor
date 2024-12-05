@@ -1,4 +1,4 @@
-# Truck Load Monitoring System
+# Truck Load Monitoring System ( Bubba load)
 
 This project is an Arduino-based truck load monitoring system that reads data from a load cell using the HX711 amplifier. It allows you to:
 
