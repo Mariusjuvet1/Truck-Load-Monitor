@@ -32,15 +32,43 @@ This project provides a comprehensive solution for monitoring truck loads using 
 - Basic understanding of electronics and wiring
 - Familiarity with using the Arduino IDE or willingness to learn
 - A Windows, macOS, or Linux computer with a USB port
+- **Hardware Components** (links provided below for purchasing)
 
 ## Hardware Components
 
-- **Arduino Uno** (or compatible board)
-- **HX711 Load Cell Amplifier**
-- **Load Cell Sensor** (appropriate capacity for your truck)
-- **Adafruit 2.8" TFT Touch Shield for Arduino** (Product ID: 1651)
-- **Connecting Wires**
-- **Power Supply** (if not using USB power from the computer)
+You will need the following hardware components:
+
+1. **Arduino Uno** (or compatible board)
+
+   - Purchase from the official Arduino website: [Arduino Uno](https://store.arduino.cc/products/arduino-uno-rev3)
+
+2. **HX711 Load Cell Amplifier**
+
+   - Purchase from SparkFun: [SparkFun Load Cell Amplifier - HX711](https://www.sparkfun.com/products/13879)
+   - Or from Aliexpress: [HX711 Module on Aliexpress](https://www.aliexpress.com/item/1005007696183020.html)
+
+3. **Load Cell Sensor**
+
+   - Ensure it has an appropriate capacity for your truck's maximum load.
+   - Available from various suppliers; for example:
+     - [Load Cells on SparkFun](https://www.sparkfun.com/categories/469)
+     - [Load Cells on Aliexpress](https://www.aliexpress.com/wholesale?SearchText=load+cell)
+
+4. **Adafruit 2.8" TFT Touch Shield for Arduino** (Product ID: 1651)
+
+   - Purchase from Adafruit: [Adafruit 2.8" TFT Touch Shield](https://www.adafruit.com/product/1651)
+
+5. **Connecting Wires**
+
+   - Jumper wires for making connections between components.
+   - Available from various suppliers.
+
+6. **Power Supply**
+
+   - If not using USB power from the computer.
+   - Ensure the power supply meets the voltage and current requirements of your setup.
+
+**Note:** Prices and availability may vary based on your location. The provided links are for convenience and reference.
 
 ## Software Requirements
 
@@ -71,7 +99,12 @@ This project provides a comprehensive solution for monitoring truck loads using 
 - **DT (Data)** -> Pin 3
 - **SCK (Clock)** -> Pin 2
 
-**Note:** Connect the load cell sensor to the HX711 according to the sensor's datasheet.
+**Note:** Connect the load cell sensor to the HX711 according to the sensor's datasheet. Typically, the load cell wires are connected to the HX711 as follows:
+
+- **Load Cell Red Wire (Excitation+ or E+)** -> HX711 E+
+- **Load Cell Black Wire (Excitation- or E-)** -> HX711 E-
+- **Load Cell White Wire (Signal+ or A+)** -> HX711 A+
+- **Load Cell Green Wire (Signal- or A-)** -> HX711 A-
 
 ### 2. Connecting the Touchscreen Shield
 
@@ -235,5 +268,4 @@ If you prefer, you can use Visual Studio Code with the PlatformIO extension as y
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
 
